@@ -40,9 +40,10 @@ class HistoryViewController: UIViewController {
     
     @IBAction func changeYear() {
         yearLabel.text = String(format: "%.0f", yearSlider.value)
-        for (_, value) in yearAndOccupation {
-            occupationLabel.text = value
+        for (year, position) in yearAndOccupation {
+            if year == Int(yearSlider.value) {
+                occupationLabel.text = position
+            }
         }
     }
-    
 }
